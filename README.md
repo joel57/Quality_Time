@@ -11,7 +11,7 @@ A food recipe & drink paring generator.
 
 ### Image
 
-<img src="./assets/images/images.jpeg"
+<img src="./assets/images/images.jpeg">
 
 #### Link
 
