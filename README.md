@@ -1,4 +1,4 @@
-# Food & Drinks On US
+# CockTail & Food Match 
 
 A food recipe & drink paring generator.
 
