@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Raleway:wght@300&display=swap');
+
+:root {
+--red: #a20021;
+--pink: #f2d7d7;
+--brown: #8f421a;
+--black: #02111b;
+--white: #faf6f5;
+}
+.header{
+    display: flex;
+}
+#logo {
+    height: 60px;
+    width: 60px;
+    float: left;
+}
+h1 {
+    font-family: "Elsie Swash Caps";
+    color: var(--black);
+    position: relative;
+    font-size: 30px;
+    margin-left: 25em;
+}
+#date-input {
+    height: 200px;
+    border: 2px solid black;
+    margin: 25px 25px 25px;
+}
+#date-results {
+    height: 200px;
+    border: 2px solid black;
+    margin: 25px 25px 25px;
+}
