@@ -28,7 +28,8 @@ h1 {
     margin: 25px 25px 25px;
 }
 #date-results {
-    height: 200px;
+    min-height: 200px;
     border: 2px solid black;
     margin: 25px 25px 25px;
+    overflow:auto;
 }
