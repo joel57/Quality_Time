@@ -25,32 +25,38 @@
     </div>
   </section>
 
-<!-- top row -->
-<div id="date-input" class="columns"> 
-    <div id="dinner-input" class="column">
-        <h3> What's for dinner? </h3>
+<!-- date selectors -->
+<section class="section">
+        <div id="date-input" class="columns"> 
+            <div id="dinner-input" class="column is-4">
+                 <h3 class="is-size-3 title"> What's for dinner? </h3>
+                 <h2 class="is-size-4 subtitle">Enter main ingredient:</h2>
         <div class="dinner-form">
             <form id="dinner-form">
-                <input type="text">
-                <button id="foodBtn"> Get Recipe </button>
+                <input class="input" type="text">
+                <button class="button is-primary" id="foodBtn"> Get Recipe </button>
             </form>
         </div>
     </div>
-
-    <div id="drink-input" class="column">
-        <h3> Would you like a drink?  </h3>
+<div class="column is-4 has-text-centered">
+        <img src="assets/images/cheers.jpeg" alt="glasses raised in toast over meal" class="px-5 py-2">
+    </div>
+ <div id="drink-input" class="column is-4">
+        <h3 class="is-size-3 title"> Would you like a drink? </h3>
+        <h2 class="is-size-4 subtitle">Enter main ingredient:</h2>
         <div class="drink-form">
             <form id="drink-form">
-                <input type="text">
-                <button id="drinkBtn"> Get Drink </button>
+                <input class="input" type="text">
+                <button class="button is-primary" id="drinkBtn"> Get Drink </button>
             </form>
         </div>
     </div>
 </div>
 
+
 <!-- bottom row -->
 <div id="date-results" class="columns">
-    <h3> Your Date Night Results: </h3>
+    <h3 class="is-size-2 title"> Your Date Night Results: </h3>
     <div id="food-result" class="column">
         Food 
     </div>
