@@ -7,21 +7,25 @@
 --black: #02111b;
 --white: #faf6f5;
 }
-.header{
-    display: flex;
-}
+
 #logo {
     height: 60px;
     width: 60px;
     float: left;
 }
-h1 {
+h1,h2 {
     font-family: "Elsie Swash Caps";
-    color: var(--black);
-    position: relative;
-    font-size: 30px;
-    margin-left: 25em;
+    
 }
+
+/* The hero image */
+.hero-image {
+    background-image: url(../images/rooftop.jpeg);
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
 #date-input {
     height: 200px;
     border: 2px solid black;
@@ -32,3 +36,4 @@ h1 {
     border: 2px solid black;
     margin: 25px 25px 25px;
 }
+
