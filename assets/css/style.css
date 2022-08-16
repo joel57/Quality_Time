@@ -32,8 +32,23 @@ h1,h2 {
     margin: 25px 25px 25px;
 }
 #date-results {
-    height: 200px;
+    min-height: 200px;
     border: 2px solid black;
     margin: 25px 25px 25px;
+    overflow:auto;
 }
 
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+strong{
+    display: block;
+}
+
+ul{
+    display: block;
+    border:red solid 1px;
+    margin: 4px;
+}
