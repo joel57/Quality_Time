@@ -13,7 +13,7 @@
     width: 60px;
     float: left;
 }
-h1,h2 {
+.header h1, .hero-image h2 {
     font-family: "Elsie Swash Caps";
     
 }
