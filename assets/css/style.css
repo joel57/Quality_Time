@@ -17,10 +17,16 @@ body {
     width: 60px;
     float: left;
 }
-.header h1, .hero-image h2 {
+h1 {
     font-family: "Elsie Swash Caps";
-    
+    color: var(--black);
 }
+h2 {
+    font-family: "Raleway";
+    font-weight: 300;
+    background-color: var(--pink);
+    color: var(--brown);
+} 
 
 /* The hero image */
 .hero-image {
