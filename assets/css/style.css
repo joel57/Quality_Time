@@ -48,7 +48,7 @@ strong{
 }
 
 ul{
-    display: block;
+    display: inline-block;
     border:red solid 1px;
     margin: 4px;
 }
