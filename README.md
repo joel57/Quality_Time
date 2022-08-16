@@ -15,10 +15,10 @@ The app helps you find a food recipe and a drink paring so you can enjoy time wi
   
 ## Contributors
 
-Zuleika Tesei / Front-End
-Kimberly Oaks / Front-End
-Dennis Jackson / Back-End
-Joel Del Rio / Back-End
+* Zuleika Tesei / Front-End
+* Kimberly Oaks / Front-End
+* Dennis Jackson / Back-End
+* Joel Del Rio / Back-End
  
 ### Image
 
