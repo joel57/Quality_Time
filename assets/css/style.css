@@ -16,6 +16,7 @@ h1 {
     font-family: "Playfair Display";
     color: var(--black);
     letter-spacing: 1px;
+    background-color: var(--white);
 }
 h2 {
     font-family: "Poppins";
@@ -41,6 +42,7 @@ h3 {
 }
 .input {
     border-radius: 14px;
+    background-color: var(--white);
 }
 #foodBtn, #drinkBtn {
     margin-top: 8px;
