@@ -11,7 +11,6 @@ body {
     font-family: "Raleway";
     font-weight: 300;
 }
-
 #logo {
     height: 60px;
     width: 60px;
@@ -27,7 +26,6 @@ h2 {
     background-color: var(--pink);
     color: var(--brown);
 } 
-
 /* The hero image */
 .hero-image {
     background-image: url(../images/rooftop.jpeg);
@@ -39,22 +37,31 @@ h2 {
 .main-bg{
     background-color: var(--pink);
 }
-
 #date-input, #date-results {
     min-height: 200px;
 }
-
 #foodBtn, #drinkBtn {
-    margin-top: 5px;
+    margin-top: 8px;
     width: 100%;
     font-family: Raleway;
     font-weight: 600;
     background-color: var(--brown);
     color: var(--white);
+    cursor: pointer;
+    box-shadow: -7px 8px 20px 3px rgb(165 42 42 / 54%);
+    transition: transform 150ms;
+    transform: scale(1);
+    border: solid 1px var(--black);
 }
 /* footer styles */
 footer {
     font-size: 20px;
-    max-height: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--red);
+    color: var(--white);
+}
+a {
+    color: var(--white);
 }
 
