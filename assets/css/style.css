@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Raleway:wght@300;600&display=swap');
 
 :root{
 --red: #a20021;
@@ -7,11 +7,18 @@
 --black: #02111b;
 --white: #faf6f5;
 }
+body {
+    font-family: "Raleway";
+    font-weight: 300;
+}
 
 #logo {
     height: 60px;
     width: 60px;
     float: left;
+}
+#slogan {
+    background-color: var(--pink);
 }
 .header h1, .hero-image h2 {
     font-family: "Elsie Swash Caps";
@@ -25,15 +32,30 @@
     background-size: cover;
     background-position: center;
 }
-
-#date-input {
-    height: 200px;
-    border: 2px solid black;
-    margin: 25px 25px 25px;
+/* background */
+.main-bg{
+    background-color: var(--pink);
 }
-#date-results {
-    height: 200px;
-    border: 2px solid black;
-    margin: 25px 25px 25px;
+
+#date-input, #date-results {
+    min-height: 200px;
+}
+
+#foodBtn, #drinkBtn {
+    margin-top: 5px;
+    width: 100%;
+    font-family: Raleway;
+    font-weight: 600;
+    background-color: var(--brown);
+    color: var(--white);
+}
+.fa-solid {
+    width: 20px;
+    height: 20px;
+}
+/* footer styles */
+footer{
+    font-size: 20px;
+    max-height: 50px;
 }
 
