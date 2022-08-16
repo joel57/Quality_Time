@@ -37,11 +37,11 @@
     margin: 25px 25px 25px;
     overflow:auto;
 }
-
+/* 
 img{
     max-height: 100%;
     max-width: 100%;
-}
+} */
 
 strong{
     display: block;

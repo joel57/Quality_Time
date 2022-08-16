@@ -32,10 +32,10 @@ modalContent.style.display = 'flex'
 modalContent.style.margin = '15% auto'
 modalContent.style.backgroundColor = 'white'
 modalContent.style.maxHeight = '400px'
-modalContent.style.width = '80%'
+modalContent.style.width = '60%'
 modalContent.style.padding = '30px'
 modalContent.style.borderRadius = '35px'
-modalContent.style.justifyContent = 'center'
+modalContent.style.justifyContent = 'space-evenly'
 modalContent.style.overflow = 'auto'
 
 modal.appendChild(modalContent)
@@ -62,6 +62,7 @@ window.addEventListener('click',event=>{
 
 btnElOne.addEventListener('click',(event)=>{
     event.preventDefault()
+    modalContent.innerHTML = ''
     modal.style.display = 'block'
     getFood(inputOne.value)
     console.log(inputOne.value)
@@ -85,6 +86,7 @@ async function getRandomDrink(){
 
 
     let drinkContent = document.createElement('div')
+    drinkContent.style.position = 'relative'
 
     
     for(let data in drink){
@@ -120,12 +122,36 @@ async function getRandomDrink(){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    // helper.style.minWidth = '200px'
+    helper.style.right= '0px'
+    helper.style.bottom= '-35px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    drinkContent.appendChild(helper)
+    
 
     drinkContent.appendChild(name)
     drinkContent.appendChild(imgcontainer)
-    drinkContent.appendChild(ingredient)
-    drinkContent.appendChild(instructions)
     modalContent.append(drinkContent)
+
+    drinkContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    drinkContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
 
     console.log(drink.strInstructions)
     
@@ -147,6 +173,7 @@ async function getrandomFood(){
     
     
     let foodContent = document.createElement('div')
+    foodContent.style.position ='relative'
 
     
     for(let data in food){
@@ -182,14 +209,36 @@ async function getrandomFood(){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    // helper.style.minWidth = '200px'
+    helper.style.right= '0px'
+    helper.style.bottom= '-35px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    foodContent.appendChild(helper)
+    
 
     foodContent.appendChild(name)
     foodContent.appendChild(imgcontainer)
-    foodContent.appendChild(ingredient)
-    foodContent.appendChild(instructions)
     modalContent.append(foodContent)
 
-    console.log(food.strInstructions)
+    foodContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    foodContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
     
     
 }
@@ -204,6 +253,7 @@ async function getDrink(d){
     
 
     let drinkContent = document.createElement('div')
+    drinkContent.style.position = 'relative'
 
     
     for(let data in drink){
@@ -239,18 +289,37 @@ async function getDrink(d){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    // helper.style.minWidth = '200px'
+    helper.style.right= '0px'
+    helper.style.bottom= '-35px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    drinkContent.appendChild(helper)
+    
 
     drinkContent.appendChild(name)
     drinkContent.appendChild(imgcontainer)
-    drinkContent.appendChild(ingredient)
-    drinkContent.appendChild(instructions)
     modalContent.append(drinkContent)
 
-    console.log(drink.strInstructions)
-    
-    
-    
-    
+    drinkContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    drinkContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
+
     
 }
 
@@ -271,6 +340,8 @@ async function getFood(f){
     
     
     let foodContent = document.createElement('div')
+
+    foodContent.style.position ='relative'
 
     
     for(let data in food){
@@ -306,15 +377,36 @@ async function getFood(f){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    // helper.style.minWidth = '200px'
+    helper.style.right= '0px'
+    helper.style.bottom= '-35px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    foodContent.appendChild(helper)
+    
 
     foodContent.appendChild(name)
     foodContent.appendChild(imgcontainer)
-    foodContent.appendChild(ingredient)
-    foodContent.appendChild(instructions)
     modalContent.append(foodContent)
 
-    console.log(food.strInstructions)
-    
+    foodContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    foodContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
 }
 
 
