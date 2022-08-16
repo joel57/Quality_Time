@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- linking our stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title> Quality Time </title>
 </head>
@@ -30,36 +32,51 @@
   </section>
 
 <!-- date selectors -->
-<section class="section">
+<section class="section main-bg">
         <div id="date-input" class="columns"> 
-            <div id="dinner-input" class="column is-4">
-                 <h3 class="is-size-3 title"> What's for dinner? </h3>
+            <div id="dinner-input" class="column is-6">
+                 <h3 class="is-size-3 title"> What's for dinner? </h3> 
                  <h2 class="is-size-4 subtitle">Enter main ingredient:</h2>
         <div class="dinner-form">
             <form id="dinner-form">
                 <input class="input" type="text">
-                <button class="button is-primary" id="foodBtn"> Get Recipe </button>
+                <button class="button" id="foodBtn"> Get Recipe </button>
             </form>
         </div>
     </div>
-<div class="column is-4 has-text-centered">
-        <img src="assets/images/cheers.jpeg" alt="glasses raised in toast over meal" class="px-5 py-2">
-    </div>
- <div id="drink-input" class="column is-4">
+
+ <div id="drink-input" class="column is-6">
         <h3 class="is-size-3 title"> Would you like a drink? </h3>
         <h2 class="is-size-4 subtitle">Enter main ingredient:</h2>
         <div class="drink-form">
             <form id="drink-form">
                 <input class="input" type="text">
-                <button class="button is-primary" id="drinkBtn"> Get Drink </button>
+                <button class="button" id="drinkBtn"> Get Drink </button>
             </form>
         </div>
     </div>
 </div>
 
+<!-- modal needs to toggled on/off using JS-->
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title"> Your Date Night Recipe &hearts; </p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="recipe-title"> Test </div>
+        <div id="recipe-ingredients"> Test </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success"> Got it! </button>
+      </footer>
+    </div>
+  </div>
 
 <!-- bottom row -->
-<div id="date-results" class="columns">
+<!-- <div id="date-results" class="columns">
     <h3 class="is-size-2 title"> Your Date Night Results: </h3>
     <div id="food-result" class="column">
         Food 
@@ -67,7 +84,15 @@
     <div id="drink-result" class="column">
         Recipe 
     </div>
-</div>
+</div> -->
+
+<!-- footer  -->
+<footer class="footer is-primary">
+    <div class="content has-text-centered">
+        <p> <strong> Quality Time </strong> by <a href="https://github.com/joel57/Quality_Time">  Dennis, Joel, Kim, & Zue. </a> </p>
+    </div>
+</footer>
+
 <script src="./assets/js/script.js"></script>
 </body>
 </html>
