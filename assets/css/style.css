@@ -36,6 +36,7 @@ h3 {
     background-size: cover;
     background-position: center;
 }
+
 /* background */
 .main-bg{
     background-color: var(--pink);
@@ -75,3 +76,12 @@ a {
     color: var(--white);
 }
 
+strong{
+    display: block;
+}
+
+ul{
+    display: inline-block;
+    border:red solid 1px;
+    margin: 4px;
+}
