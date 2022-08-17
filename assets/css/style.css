@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:ital,wght@0,500;1,300&family=Raleway:ital,wght@0,300;0,600;1,300&display=swap');
 
 :root{
 --red: #a20021;
@@ -7,17 +7,28 @@
 --black: #02111b;
 --white: #faf6f5;
 }
-
 #logo {
     height: 60px;
     width: 60px;
     float: left;
 }
-.header h1, .hero-image h2 {
-    font-family: "Elsie Swash Caps";
-    
+h1 {
+    font-family: "Playfair Display";
+    color: var(--black);
+    letter-spacing: 1px;
+    background-color: var(--white);
 }
-
+h2 {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-style: italic;
+    background-color: var(--pink);
+    color: var(--brown);
+} 
+h3 {
+    font-family: "Playfair Display";
+    color: var(--black);
+}
 /* The hero image */
 .hero-image {
     background-image: url(../images/rooftop.jpeg);
@@ -26,22 +37,44 @@
     background-position: center;
 }
 
-#date-input {
-    height: 200px;
-    border: 2px solid black;
-    margin: 25px 25px 25px;
+/* background */
+.main-bg{
+    background-color: var(--pink);
 }
-#date-results {
-    min-height: 200px;
-    border: 2px solid black;
-    margin: 25px 25px 25px;
-    overflow:auto;
+.input {
+    border-radius: 14px;
+    background-color: var(--white);
 }
-/* 
-img{
-    max-height: 100%;
-    max-width: 100%;
-} */
+#foodBtn, #drinkBtn {
+    margin-top: 8px;
+    width: 100%;
+    font-family: 'Poppins';
+    font-weight: 500;
+    background-color: var(--brown);
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 150ms;
+    transform: scale(1);
+    border: solid 1px var(--black);
+    border-radius: 14px;
+}
+#foodBtn {
+    box-shadow: -7px 8px 20px 3px rgb(165 42 42 / 54%);
+}
+#drinkBtn {
+    box-shadow: 7px 8px 20px 3px rgb(165 42 42 / 54%);
+}
+/* footer styles */
+footer {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--red);
+    color: var(--white);
+}
+a {
+    color: var(--white);
+}
 
 strong{
     display: block;
