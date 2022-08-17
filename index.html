@@ -38,7 +38,7 @@
             <form id="dinner-form">
 
                 <input class="input" type="text">
-                <button class="button" id="foodBtn"> Get Recipe </button>
+                <button class="button btn-effect" id="foodBtn"> Get Recipe </button>
  
             </form>
         </div>
@@ -51,7 +51,7 @@
             <form id="drink-form">
 
                 <input class="input" type="text">
-                <button class="button" id="drinkBtn"> Get Drink </button>
+                <button class="button btn-effect" id="drinkBtn"> Get Drink </button>
                 
             </form>
         </div>
@@ -62,17 +62,23 @@
 <!-- modal needs to toggled on/off using JS-->
 <div class="modal">
     <div class="modal-background"></div>
+
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title"> Your Date Night Recipe &hearts; </p>
         <button class="delete" aria-label="close"></button>
       </header>
+
       <section class="modal-card-body">
-        <div id="recipe-title"> Test </div>
-        <div id="recipe-ingredients"> Test </div>
+        <div id="recipe-title"> Dish Title </div>
+        <div id="recipe-ingredients"> Image </div>
+
+        <div id="drink-title"> Drink Title </div>
+        <div id="drink-ingredients"> Image </div>
       </section>
+
       <footer class="modal-card-foot">
-        <button class="button is-success"> Got it! </button>
+        <button id="modal-restart-btn" class="button btn-effect"> Get Random! </button>
       </footer>
     </div>
   </div>
