@@ -12,11 +12,16 @@
     width: 60px;
     float: left;
 }
+
+.navbar-item {
+    font-family: "Playfair Display";
+}
+
 h1 {
     font-family: "Playfair Display";
     color: var(--black);
     letter-spacing: 1px;
-    background-color: var(--white);
+    background-color: var(--pink);
 }
 h2 {
     font-family: "Poppins";
