@@ -11,11 +11,48 @@
     <title> Quality Time </title>
 </head>
 <body>
-<!-- header -->
-<div class="header">
-    <img src="assets/images/QT-logo.jpeg" alt="quality-time-logo" id="logo">
-    <h1 class="is-size-2 has-text-centered is-black"> Quality Time </h1>
-</div>
+
+<!-- navbar -->
+<nav class="navbar is-white">
+    <!-- logo -->
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="assets/images/QT-logo.jpeg" alt="quality time logo" id="logo" style="max-height:80px">
+        </a> 
+        <h1 class="is-size-2 has-text-centered is-black has-background"> Quality Time </h1>   
+        <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>    
+      
+    <div class="navbar-menu" id="nav-links">
+        <!-- Navbar link-->
+
+        <div class="navbar-end">
+            <a href="javascript:;">
+                <svg class="icon-arrow before navbar-item">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+                <span class="label"> How to Use </span>
+                <svg class="icon-arrow after">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </a>
+            
+            <svg style="display: none;">
+              <defs>
+                <symbol id="arrow" viewBox="0 0 30 20">
+                  <title>Arrow</title>
+                  <path d="M12.5 18 2 7.707 2.707 7l9.793 9.586L22.293 7l.707.707L12.5 18z"/>
+                </symbol>
+              </defs>
+            </svg>
+            
+        </div>
+    </div>
+</nav>    
 
 <!-- hero -->
 <section id="slogan" class="hero is-primary">
@@ -97,7 +134,7 @@
 <!-- footer  -->
 <footer class="is-primary">
     <div class="content has-text-centered">
-        <p> Quality Time by <a href="https://github.com/joel57/Quality_Time">  Dennis, Joel, Kim, & Zue. 🤟 </a> </p>
+        <p> Quality Time by <a class="github-link" href="https://github.com/joel57/Quality_Time">  Dennis, Joel, Kim, & Zue. 🤟 </a> </p>
     </div>
 </footer>
 
