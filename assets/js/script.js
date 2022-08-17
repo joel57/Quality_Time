@@ -13,32 +13,32 @@ let getinputs = document.querySelectorAll('input')
 
 // modal
 
-let modal =  document.createElement('div')
-modal.setAttribute('class','modal')
-modal.style.display ='none'
-modal.style.height = '100%'
-modal.style.width = '100%'
-modal.style.position = 'fixed'
-modal.style.left = '0'
-modal.style.top ='0'
-modal.style.backgroundColor = 'rgba(0,0,0,0.4)'
-modal.style.zIndex = '4'
+// let modal =  document.querySelector('.modal-card-body')
+// modal.setAttribute('class','modal')
+// modal.style.display ='none'
+// modal.style.height = '100%'
+// modal.style.width = '100%'
+// modal.style.position = 'fixed'
+// modal.style.left = '0'
+// modal.style.top ='0'
+// modal.style.backgroundColor = 'rgba(0,0,0,0.4)'
+// modal.style.zIndex = '4'
 
-document.body.appendChild(modal)
+// document.body.appendChild(modal)
 
-let modalContent = document.createElement('div')
-modalContent.style.display = 'flex'
-// modalContent.style.flexWrap = 'wrap'
-modalContent.style.margin = '15% auto'
-modalContent.style.backgroundColor = 'white'
-modalContent.style.maxHeight = '400px'
-modalContent.style.width = '60%'
-modalContent.style.padding = '30px'
-modalContent.style.borderRadius = '35px'
-modalContent.style.justifyContent = 'space-evenly'
-modalContent.style.overflow = 'auto'
+let modalContent = document.querySelector('.modal-card-body')
+// modalContent.style.display = 'flex'
+// // modalContent.style.flexWrap = 'wrap'
+// modalContent.style.margin = '15% auto'
+// modalContent.style.backgroundColor = 'white'
+// modalContent.style.maxHeight = '400px'
+// modalContent.style.width = '60%'
+// modalContent.style.padding = '30px'
+// modalContent.style.borderRadius = '35px'
+// modalContent.style.justifyContent = 'space-evenly'
+// modalContent.style.overflow = 'auto'
 
-modal.appendChild(modalContent)
+// modal.appendChild(modalContent)
 
 
 
@@ -49,7 +49,8 @@ let inputOne  = getinputs[0]
 let inputTwo =  getinputs[1]
 // event listener 
 logo.addEventListener('click',event=>{
-   modalContent.innerHTML =''
+    let modal = document.querySelector('.modal')
+    modal.className += ' is-active'
     getrandomFood()
     getRandomDrink()
     modal.style.display ='block'
@@ -62,15 +63,19 @@ window.addEventListener('click',event=>{
 
 btnElOne.addEventListener('click',(event)=>{
     event.preventDefault()
-    modalContent.innerHTML = ''
-    modal.style.display = 'block'
+    // modalContent.innerHTML = ''
+    // modal.style.display = 'block'
+    let modal = document.querySelector('.modal')
+    modal.className += ' is-active'
     getFood(inputOne.value)
     console.log(inputOne.value)
 })
 
 btnElTwo.addEventListener('click',(event)=>{
     event.preventDefault()
-    modal.style.display='block'
+    // modal.style.display='block'
+    let modal = document.querySelector('.modal')
+    modal.className += ' is-active'
     getDrink(inputTwo.value)
     console.log(inputTwo.value)
 })
@@ -123,14 +128,15 @@ async function getRandomDrink(){
     }
 
     let helper = document.createElement('div')
+    helper.setAttribute('class','helper')
     helper.style.display = 'none'
     helper.style.backgroundColor = 'white'
     helper.style.border = 'black 2px solid'
     helper.style.position ='absolute'
     helper.style.height = '100px'
-    // helper.style.minWidth = '200px'
-    helper.style.right= '0px'
-    helper.style.bottom= '-35px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
     helper.style.zIndex = '10'
     helper.style.overflow ='auto'
     helper.style.borderRadius = '10px'
@@ -215,9 +221,9 @@ async function getrandomFood(){
     helper.style.border = 'black 2px solid'
     helper.style.position ='absolute'
     helper.style.height = '100px'
-    // helper.style.minWidth = '200px'
-    helper.style.right= '0px'
-    helper.style.bottom= '-35px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
     helper.style.zIndex = '10'
     helper.style.overflow ='auto'
     helper.style.borderRadius = '10px'
