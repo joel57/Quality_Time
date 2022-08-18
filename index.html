@@ -11,11 +11,57 @@
     <title> Quality Time </title>
 </head>
 <body>
-<!-- header -->
-<div class="header">
-    <img src="assets/images/QT-logo.jpeg" alt="quality-time-logo" id="logo">
-    <h1 class="is-size-2 has-text-centered is-black"> Quality Time </h1>
-</div>
+
+<!-- navbar -->
+<nav class="navbar is-white">
+    <!-- logo -->
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="assets/images/QT-logo.jpeg" alt="quality time logo" id="logo" style="max-height:80px">
+        </a> 
+        <h1 class="is-size-2 has-text-centered is-black has-background"> Quality Time </h1>   
+        <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>    
+      
+    <div class="navbar-menu" id="nav-links">
+        <!-- Navbar link-->
+
+        <div class="navbar-end">
+            <a href="javascript:;">
+                <svg class="icon-arrow before navbar-item">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+                <span class="label"> How to Use </span>
+                <svg class="icon-arrow after">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </a>    
+            <a href="javascript:;">
+                <svg class="icon-arrow before navbar-item">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+                <span class="label"> Get Random </span>
+                <svg class="icon-arrow after">
+                    <use xlink:href="#arrow"></use>
+            </svg>
+            </a>
+            
+            <svg style="display: none;">
+              <defs>
+                <symbol id="arrow" viewBox="0 0 30 20">
+                  <title>Arrow</title>
+                  <path d="M12.5 18 2 7.707 2.707 7l9.793 9.586L22.293 7l.707.707L12.5 18z"/>
+                </symbol>
+              </defs>
+            </svg>
+            
+        </div>
+    </div>
+</nav>    
 
 <!-- hero -->
 <section id="slogan" class="hero is-primary">
@@ -38,7 +84,7 @@
             <form id="dinner-form">
 
                 <input class="input" type="text">
-                <button class="button" id="foodBtn"> Get Recipe </button>
+                <button class="button btn-effect" id="foodBtn"> Get Recipe </button>
  
             </form>
         </div>
@@ -51,7 +97,7 @@
             <form id="drink-form">
 
                 <input class="input" type="text">
-                <button class="button" id="drinkBtn"> Get Drink </button>
+                <button class="button btn-effect" id="drinkBtn"> Get Drink </button>
                 
             </form>
         </div>
@@ -62,17 +108,23 @@
 <!-- modal needs to toggled on/off using JS-->
 <div class="modal">
     <div class="modal-background"></div>
+
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title"> Your Date Night Recipe &hearts; </p>
         <button class="delete" aria-label="close"></button>
       </header>
+
       <section class="modal-card-body">
-        <div id="recipe-title"> Test </div>
-        <div id="recipe-ingredients"> Test </div>
+        <div id="recipe-title"> Dish Title </div>
+        <div id="recipe-ingredients"> Image </div>
+
+        <div id="drink-title"> Drink Title </div>
+        <div id="drink-ingredients"> Image </div>
       </section>
+
       <footer class="modal-card-foot">
-        <button class="button is-success"> Got it! </button>
+        <button id="modal-restart-btn" class="button btn-effect"> Get Random! </button>
       </footer>
     </div>
   </div>
@@ -88,10 +140,20 @@
     </div>
 </div> -->
 
+<!-- How to use section-->
+<div class="container">
+    <a class="How to use"></a>
+    <div class="has-text-justified">
+        <div>
+            <h3 class="is-size-2 has-text-centered">How to Use:</h3>
+            <p>To find your recipe based on a main ingredient you have on hand, type in the ingredient and click 'Get Recipe' or 'Get Drink.' Want to be completely surprised? Click 'Get Random' at the top of the page, and we'll choose for you. Let us put an end to the fight and get you back to your night!</p>
+        </div>
+    </div>
+</div>
 <!-- footer  -->
 <footer class="is-primary">
     <div class="content has-text-centered">
-        <p> Quality Time by <a href="https://github.com/joel57/Quality_Time">  Dennis, Joel, Kim, & Zue. 🤟 </a> </p>
+        <p> Quality Time by <a class="github-link" href="https://github.com/joel57/Quality_Time">  Dennis, Joel, Kim, & Zue. 🤟 </a> </p>
     </div>
 </footer>
 
