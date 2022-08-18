@@ -7,6 +7,82 @@
 --black: #02111b;
 --white: #faf6f5;
 }
+html, body {
+   
+    height: 100%;
+}
+
+a {
+    color: var (--black);
+    display: inline-block;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: auto;
+    padding: 12px 32px 12px 82px;
+    position: relative;
+    text-decoration: none;
+}
+
+a .label,
+a .icon-arrow {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    perspective: 1000;
+}
+
+a .label {
+    display: inline-block;
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+a .icon-arrow {
+    fill: #3F3F3F;
+    height: 15px;
+    top: 17px;
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);
+    width: 35px;
+}
+
+a .icon-arrow.before {
+    left: 32px;
+    margin-right: 15px;
+    position: absolute;
+    transform-origin: left center;
+}
+
+a .icon-arrow.after {
+    margin-left: 15px;
+    opacity: 0;
+    position: absolute;
+    right: 32px;
+    transform: translateX(75%) scaleX(0.1);
+    transform-origin: right center;
+}
+
+a:hover .label {
+    transform: translateX(-52px);
+}
+
+a:hover .icon-arrow.before {
+    opacity: 0;
+    transform: translateX(-75%) scaleX(0.1);
+}
+
+a:hover .icon-arrow.after {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+}
+
+a:active {
+    border-color: var(--pink);
+    color: var(--red);
+}
+
+a:active .icon-arrow {
+    fill: var(--red);
+}
 #logo {
     height: 60px;
     width: 60px;
@@ -21,7 +97,6 @@ h1 {
     font-family: "Playfair Display";
     color: var(--black);
     letter-spacing: 1px;
-    background-color: var(--pink);
 }
 h2 {
     font-family: "Poppins";
@@ -50,7 +125,7 @@ h3 {
     border-radius: 14px;
     background-color: var(--white);
 }
-#foodBtn, #drinkBtn {
+#foodBtn, #drinkBtn, #modal-restart-btn {
     margin-top: 8px;
     width: 100%;
     font-family: 'Poppins';
@@ -69,16 +144,67 @@ h3 {
 #drinkBtn {
     box-shadow: 7px 8px 20px 3px rgb(165 42 42 / 54%);
 }
+
+/* how to use styles */
+
+how to use p {
+    font-family: "Poppins";
+}
+
+
+
+
+/* hover effects */
+.btn-effect {
+    color: var(--black);
+    transition: all 0.5s;
+    position: relative;
+  }
+  .btn-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  .btn-effect:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+  }
+  .btn-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+    border-radius: 14px;
+  }
+  .btn-effect:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+    border-radius: 14px;
+  }
 /* footer styles */
 footer {
     font-size: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: var(--red);
-    color: var(--white);
+    background-color: var(--pink);
+    color: var(--black);
 }
-a {
+.github-link {
     color: var(--white);
+    padding: 0;
 }
 
 strong{
@@ -90,3 +216,5 @@ ul{
     border:red solid 1px;
     margin: 4px;
 }
+
+/* media query suggestion flex direction row reverse on small screens  */
