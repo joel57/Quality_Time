@@ -11,6 +11,8 @@ let resultEl =  document.querySelector('#date-results')
 
 let getinputs = document.querySelectorAll('input')
 
+let modal = document.querySelector('.modal')
+
 // modal
 
 // let modal =  document.querySelector('.modal-card-body')
@@ -58,7 +60,7 @@ logo.addEventListener('click',event=>{
 
 window.addEventListener('click',event=>{
     if (event.target == modal) {
-        modal.style.display = "none"
+        
 }})
 
 btnElOne.addEventListener('click',(event)=>{
@@ -248,9 +250,15 @@ async function getrandomFood(){
     
     
 }
-
+// www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
 async function getDrink(d){
-    let response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${d}`)
+    let res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${"gin"}`)
+    res = await res.json()
+    console.log(res.drinks[0])
+    let random = Math.floor(Math.random()*res.drinks.length)
+    let select = res.drinks[random].strDrink
+    console.log(select)
+    let response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${select}`)
     let data = await response.json()
     let drink = data.drinks[0]
     let dirnkIngredents = []
@@ -333,7 +341,12 @@ async function getDrink(d){
 
 
 async function getFood(f){
-    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${f}`)
+    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${f}`)
+    res = await res.json()
+    let random = Math.floor(Math.random()*res.meals.length)
+    let select = res.meals[random].strMeal
+    console.log(select)
+    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${select}`)
     let data = await response.json()
     let food  = data.meals[0]
 
