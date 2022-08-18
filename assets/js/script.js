@@ -14,6 +14,11 @@ let getinputs = document.querySelectorAll('input')
 let modal = document.querySelector('.modal')
 let modalBackground = document.querySelector('.modal-background')
 
+let modalDeleteBtn = document.querySelector('.delete')
+
+let randomNav = document.querySelectorAll('.label')[1]
+
+
 // modal
 
 // let modal =  document.querySelector('.modal-card-body')
@@ -59,6 +64,13 @@ random.addEventListener('click',event=>{
     getRandomDrink()
 
 })
+randomNav.addEventListener('click',event=>{
+    modalContent.innerHTML=''
+    let modal = document.querySelector('.modal')
+    modal.classList.add('is-active')
+    getrandomFood()
+    getRandomDrink()
+})
 
 window.addEventListener('click',event=>{
     if (event.target == modalBackground) {
@@ -66,6 +78,12 @@ window.addEventListener('click',event=>{
         console.log(modal.className)
         modalContent.innerHTML = ''
 }})
+
+modalDeleteBtn.addEventListener('click',event=>{
+    modal.classList.remove('is-active')
+    modalContent.innerHTML = ''
+    
+})
 
 btnElOne.addEventListener('click',(event)=>{
     event.preventDefault()
