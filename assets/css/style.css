@@ -144,7 +144,6 @@ h3 {
 #drinkBtn {
     box-shadow: 7px 8px 20px 3px rgb(165 42 42 / 54%);
 }
-<<<<<<< HEAD
 
 /* how to use styles */
 
@@ -155,7 +154,6 @@ how to use p {
 
 
 
-=======
 /* hover effects */
 .btn-effect {
     color: var(--black);
@@ -196,7 +194,6 @@ how to use p {
     transform: scale(1,1);
     border-radius: 14px;
   }
->>>>>>> 03f0c46e88f792e357a2ea14cb7752c33cb59074
 /* footer styles */
 footer {
     font-size: 20px;
@@ -220,7 +217,4 @@ ul{
     margin: 4px;
 }
 
-<<<<<<< HEAD
-=======
 /* media query suggestion flex direction row reverse on small screens  */
->>>>>>> 03f0c46e88f792e357a2ea14cb7752c33cb59074
