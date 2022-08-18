@@ -12,6 +12,7 @@ let resultEl =  document.querySelector('#date-results')
 let getinputs = document.querySelectorAll('input')
 
 let modal = document.querySelector('.modal')
+let modalBackground = document.querySelector('.modal-background')
 
 // modal
 
@@ -52,15 +53,16 @@ let inputTwo =  getinputs[1]
 // event listener 
 logo.addEventListener('click',event=>{
     let modal = document.querySelector('.modal')
-    modal.className += ' is-active'
+    modal.classList.add('is-active')
     getrandomFood()
     getRandomDrink()
-    modal.style.display ='block'
+
 })
 
 window.addEventListener('click',event=>{
-    if (event.target == modal) {
-        
+    if (event.target == modalBackground) {
+        modal.classList.remove('is-active')
+        console.log(modal.className)
 }})
 
 btnElOne.addEventListener('click',(event)=>{
@@ -309,9 +311,9 @@ async function getDrink(d){
     helper.style.border = 'black 2px solid'
     helper.style.position ='absolute'
     helper.style.height = '100px'
-    // helper.style.minWidth = '200px'
-    helper.style.right= '0px'
-    helper.style.bottom= '-35px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
     helper.style.zIndex = '10'
     helper.style.overflow ='auto'
     helper.style.borderRadius = '10px'
@@ -402,9 +404,9 @@ async function getFood(f){
     helper.style.border = 'black 2px solid'
     helper.style.position ='absolute'
     helper.style.height = '100px'
-    // helper.style.minWidth = '200px'
-    helper.style.right= '0px'
-    helper.style.bottom= '-35px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
     helper.style.zIndex = '10'
     helper.style.overflow ='auto'
     helper.style.borderRadius = '10px'
