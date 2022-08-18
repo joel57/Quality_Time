@@ -5,7 +5,7 @@ let drinkResultsEl = document.querySelector('#drink-result')
 let btnElOne = document.querySelector('#foodBtn')
 let btnElTwo = document.querySelector('#drinkBtn')
 
-let logo = document.querySelector('#logo')
+let random = document.querySelector('#modal-restart-btn')
 
 let resultEl =  document.querySelector('#date-results')
 
@@ -51,7 +51,8 @@ let regex = /strIngredient/
 let inputOne  = getinputs[0]
 let inputTwo =  getinputs[1]
 // event listener 
-logo.addEventListener('click',event=>{
+random.addEventListener('click',event=>{
+    modalContent.innerHTML=''
     let modal = document.querySelector('.modal')
     modal.classList.add('is-active')
     getrandomFood()
@@ -63,6 +64,7 @@ window.addEventListener('click',event=>{
     if (event.target == modalBackground) {
         modal.classList.remove('is-active')
         console.log(modal.className)
+        modalContent.innerHTML = ''
 }})
 
 btnElOne.addEventListener('click',(event)=>{
@@ -72,6 +74,7 @@ btnElOne.addEventListener('click',(event)=>{
     let modal = document.querySelector('.modal')
     modal.className += ' is-active'
     getFood(inputOne.value)
+    getDrink(inputTwo.value)
     console.log(inputOne.value)
 })
 
@@ -81,6 +84,7 @@ btnElTwo.addEventListener('click',(event)=>{
     let modal = document.querySelector('.modal')
     modal.className += ' is-active'
     getDrink(inputTwo.value)
+    getFood(inputOne.value)
     console.log(inputTwo.value)
 })
 
