@@ -5,40 +5,43 @@ let drinkResultsEl = document.querySelector('#drink-result')
 let btnElOne = document.querySelector('#foodBtn')
 let btnElTwo = document.querySelector('#drinkBtn')
 
-let logo = document.querySelector('#logo')
+let random = document.querySelector('#modal-restart-btn')
 
 let resultEl =  document.querySelector('#date-results')
 
 let getinputs = document.querySelectorAll('input')
 
+let modal = document.querySelector('.modal')
+let modalBackground = document.querySelector('.modal-background')
+
 // modal
 
-let modal =  document.createElement('div')
-modal.setAttribute('class','modal')
-modal.style.display ='none'
-modal.style.height = '100%'
-modal.style.width = '100%'
-modal.style.position = 'fixed'
-modal.style.left = '0'
-modal.style.top ='0'
-modal.style.backgroundColor = 'rgba(0,0,0,0.4)'
-modal.style.zIndex = '4'
+// let modal =  document.querySelector('.modal-card-body')
+// modal.setAttribute('class','modal')
+// modal.style.display ='none'
+// modal.style.height = '100%'
+// modal.style.width = '100%'
+// modal.style.position = 'fixed'
+// modal.style.left = '0'
+// modal.style.top ='0'
+// modal.style.backgroundColor = 'rgba(0,0,0,0.4)'
+// modal.style.zIndex = '4'
 
-document.body.appendChild(modal)
+// document.body.appendChild(modal)
 
-let modalContent = document.createElement('div')
-modalContent.style.display = 'flex'
-// modalContent.style.flexWrap = 'wrap'
-modalContent.style.margin = '15% auto'
-modalContent.style.backgroundColor = 'white'
-modalContent.style.maxHeight = '400px'
-modalContent.style.width = '80%'
-modalContent.style.padding = '30px'
-modalContent.style.borderRadius = '35px'
-modalContent.style.justifyContent = 'center'
-modalContent.style.overflow = 'auto'
+let modalContent = document.querySelector('.modal-card-body')
+// modalContent.style.display = 'flex'
+// // modalContent.style.flexWrap = 'wrap'
+// modalContent.style.margin = '15% auto'
+// modalContent.style.backgroundColor = 'white'
+// modalContent.style.maxHeight = '400px'
+// modalContent.style.width = '60%'
+// modalContent.style.padding = '30px'
+// modalContent.style.borderRadius = '35px'
+// modalContent.style.justifyContent = 'space-evenly'
+// modalContent.style.overflow = 'auto'
 
-modal.appendChild(modalContent)
+// modal.appendChild(modalContent)
 
 
 
@@ -48,29 +51,40 @@ let regex = /strIngredient/
 let inputOne  = getinputs[0]
 let inputTwo =  getinputs[1]
 // event listener 
-logo.addEventListener('click',event=>{
-   modalContent.innerHTML =''
+random.addEventListener('click',event=>{
+    modalContent.innerHTML=''
+    let modal = document.querySelector('.modal')
+    modal.classList.add('is-active')
     getrandomFood()
     getRandomDrink()
-    modal.style.display ='block'
+
 })
 
 window.addEventListener('click',event=>{
-    if (event.target == modal) {
-        modal.style.display = "none"
+    if (event.target == modalBackground) {
+        modal.classList.remove('is-active')
+        console.log(modal.className)
+        modalContent.innerHTML = ''
 }})
 
 btnElOne.addEventListener('click',(event)=>{
     event.preventDefault()
-    modal.style.display = 'block'
+    // modalContent.innerHTML = ''
+    // modal.style.display = 'block'
+    let modal = document.querySelector('.modal')
+    modal.className += ' is-active'
     getFood(inputOne.value)
+    getDrink(inputTwo.value)
     console.log(inputOne.value)
 })
 
 btnElTwo.addEventListener('click',(event)=>{
     event.preventDefault()
-    modal.style.display='block'
+    // modal.style.display='block'
+    let modal = document.querySelector('.modal')
+    modal.className += ' is-active'
     getDrink(inputTwo.value)
+    getFood(inputOne.value)
     console.log(inputTwo.value)
 })
 
@@ -85,6 +99,7 @@ async function getRandomDrink(){
 
 
     let drinkContent = document.createElement('div')
+    drinkContent.style.position = 'relative'
 
     
     for(let data in drink){
@@ -120,12 +135,37 @@ async function getRandomDrink(){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.setAttribute('class','helper')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    drinkContent.appendChild(helper)
+    
 
     drinkContent.appendChild(name)
     drinkContent.appendChild(imgcontainer)
-    drinkContent.appendChild(ingredient)
-    drinkContent.appendChild(instructions)
     modalContent.append(drinkContent)
+
+    drinkContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    drinkContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
 
     console.log(drink.strInstructions)
     
@@ -147,6 +187,7 @@ async function getrandomFood(){
     
     
     let foodContent = document.createElement('div')
+    foodContent.style.position ='relative'
 
     
     for(let data in food){
@@ -182,20 +223,48 @@ async function getrandomFood(){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    foodContent.appendChild(helper)
+    
 
     foodContent.appendChild(name)
     foodContent.appendChild(imgcontainer)
-    foodContent.appendChild(ingredient)
-    foodContent.appendChild(instructions)
     modalContent.append(foodContent)
 
-    console.log(food.strInstructions)
+    foodContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    foodContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
     
     
 }
-
+// www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
 async function getDrink(d){
-    let response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${d}`)
+    let res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${"gin"}`)
+    res = await res.json()
+    console.log(res.drinks[0])
+    let random = Math.floor(Math.random()*res.drinks.length)
+    let select = res.drinks[random].strDrink
+    console.log(select)
+    let response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${select}`)
     let data = await response.json()
     let drink = data.drinks[0]
     let dirnkIngredents = []
@@ -204,6 +273,7 @@ async function getDrink(d){
     
 
     let drinkContent = document.createElement('div')
+    drinkContent.style.position = 'relative'
 
     
     for(let data in drink){
@@ -239,18 +309,37 @@ async function getDrink(d){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    drinkContent.appendChild(helper)
+    
 
     drinkContent.appendChild(name)
     drinkContent.appendChild(imgcontainer)
-    drinkContent.appendChild(ingredient)
-    drinkContent.appendChild(instructions)
     modalContent.append(drinkContent)
 
-    console.log(drink.strInstructions)
-    
-    
-    
-    
+    drinkContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    drinkContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
+
     
 }
 
@@ -258,7 +347,12 @@ async function getDrink(d){
 
 
 async function getFood(f){
-    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${f}`)
+    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${f}`)
+    res = await res.json()
+    let random = Math.floor(Math.random()*res.meals.length)
+    let select = res.meals[random].strMeal
+    console.log(select)
+    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${select}`)
     let data = await response.json()
     let food  = data.meals[0]
 
@@ -271,6 +365,8 @@ async function getFood(f){
     
     
     let foodContent = document.createElement('div')
+
+    foodContent.style.position ='relative'
 
     
     for(let data in food){
@@ -306,15 +402,36 @@ async function getFood(f){
         // console.log(`${drink[`strMeasure${i+1}`]} ${dirnkIngredents[i]}`)
     }
 
+    let helper = document.createElement('div')
+    helper.style.display = 'none'
+    helper.style.backgroundColor = 'white'
+    helper.style.border = 'black 2px solid'
+    helper.style.position ='absolute'
+    helper.style.height = '100px'
+    helper.style.maxWidth = '200px'
+    helper.style.right= '200px'
+    helper.style.bottom= '0px'
+    helper.style.zIndex = '10'
+    helper.style.overflow ='auto'
+    helper.style.borderRadius = '10px'
+
+
+    helper.appendChild(ingredient)
+    helper.appendChild(instructions)
+    foodContent.appendChild(helper)
+    
 
     foodContent.appendChild(name)
     foodContent.appendChild(imgcontainer)
-    foodContent.appendChild(ingredient)
-    foodContent.appendChild(instructions)
     modalContent.append(foodContent)
 
-    console.log(food.strInstructions)
-    
+    foodContent.addEventListener('mouseover', ()=>{
+        helper.style.display = 'block'
+    })
+
+    foodContent.addEventListener('mouseout', ()=>{
+        helper.style.display = 'none'
+    })
 }
 
 
