@@ -206,12 +206,12 @@ h3 {
     padding-bottom: 100px;
 }
 #how-to-use h3 {
-    padding: 15px 5px;
+    padding: 15px-is-desktop 5px-is-desktop;
     letter-spacing: 2px;
 }
 #how-to-use p {
-    padding-right: 3em;
-    padding-left: 3em;
+    padding-right: 3em-is-desktop;
+    padding-left: 3em-is-desktop;
     color: var(--black);
     line-height: 2em;
 }
