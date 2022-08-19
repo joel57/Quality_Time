@@ -16,7 +16,7 @@ let modalBackground = document.querySelector('.modal-background')
 
 let modalDeleteBtn = document.querySelector('.delete')
 
-let randomNav = document.querySelectorAll('.label')[1]
+let randomNav = document.querySelector('#random')
 
 
 // modal
