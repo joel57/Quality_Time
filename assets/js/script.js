@@ -276,7 +276,7 @@ async function getrandomFood(){
 }
 // www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
 async function getDrink(d){
-    let res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${"gin"}`)
+    let res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${d}`)
     res = await res.json()
     console.log(res.drinks[0])
     let random = Math.floor(Math.random()*res.drinks.length)
