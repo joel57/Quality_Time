@@ -11,7 +11,15 @@ html, body {
    
     height: 100%;
 }
+strong{
+    display: block;
+}
 
+ul{
+    display: inline-block;
+    border:red solid 1px;
+    margin: 4px;
+}
 a {
     color: var (--black);
     display: inline-block;
@@ -145,16 +153,7 @@ h3 {
     box-shadow: 7px 8px 20px 3px rgb(165 42 42 / 54%);
 }
 
-/* how to use styles */
-
-how to use p {
-    font-family: "Poppins";
-}
-
-
-
-
-/* hover effects */
+/* button hover effects */
 .btn-effect {
     color: var(--black);
     transition: all 0.5s;
@@ -194,27 +193,46 @@ how to use p {
     transform: scale(1,1);
     border-radius: 14px;
   }
+.modal-card-title {
+    font-family: "Poppins";
+}
+.modal-card-body {
+    font-family: "Poppins";
+}
+/* how to section styles */
+#how-to-use {
+    background-color: var(--pink);
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+#how-to-use h3 {
+    padding: 15px 5px;
+    letter-spacing: 2px;
+}
+#how-to-use p {
+    padding-right: 3em;
+    padding-left: 3em;
+    color: var(--black);
+    line-height: 2em;
+}
+.box {
+    padding: 60px;
+    background-color: var(--white);
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
 /* footer styles */
 footer {
+    font-family: "Poppins";
     font-size: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: var(--pink);
+    background-color: var(--red);
     color: var(--black);
 }
 .github-link {
-    color: var(--white);
+    color: var(--pink);
     padding: 0;
 }
 
-strong{
-    display: block;
-}
 
-ul{
-    display: inline-block;
-    border:red solid 1px;
-    margin: 4px;
-}
-
-/* media query suggestion flex direction row reverse on small screens  */
